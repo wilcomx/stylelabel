@@ -18,17 +18,31 @@ const defaultStyle: CustomStyle = {
 };
 
 export class StyleLabel extends Component<StyleLabelProps> {
-    private readonly styles = flattenStyles(defaultStyle, this.props.style);
-
     render(): ReactNode {
-        const { label, color } = this.props;
+        const { color, label } = this.props;
 
-        this.styles.label.color = color;
-        
+        const styles = this.getStyles(color);
+
         return (
-            <View style={this.styles.container}>
-                <Text style={this.styles.label}>{label}</Text>
+            <View style={styles.container}>
+                <Text style={styles.label}>{label}</Text>
             </View>
         );
+    }
+
+    private getStyles(color : string | undefined): CustomStyle {
+        if (color != undefined && color != '') {
+            const componentStyle: CustomStyle = {
+                container: { },
+                label: {
+                    color: color
+                }
+            };
+            return flattenStyles(
+                flattenStyles(componentStyle, [defaultStyle]),
+                 this.props.style
+            );    
+        }
+        return flattenStyles(defaultStyle, this.props.style);
     }
 }
