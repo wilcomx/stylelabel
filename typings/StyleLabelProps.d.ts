@@ -3,6 +3,7 @@
  * WARNING: All changes made to this file will be overwritten
  * @author Mendix Widgets Team
  */
+import { EditableValue } from "mendix";
 
 interface CommonProps<Style> {
     name: string;
@@ -10,5 +11,6 @@ interface CommonProps<Style> {
 }
 
 export interface StyleLabelProps<Style> extends CommonProps<Style> {
-    sampleText?: string;
+    label?: EditableValue<string>;
+    color?: EditableValue<string>;
 }

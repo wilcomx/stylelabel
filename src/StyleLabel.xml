@@ -8,9 +8,19 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="sampleText" type="string" required="false">
-                <caption>Default value</caption>
-                <description>Sample text input</description>
+            <property key="label" type="attribute" required="false">
+                <caption>Label</caption>
+                <description>Label</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+            <property key="color" type="attribute" required="false">
+                <caption>Color</caption>
+                <description>Color of the label</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
             </property>
         </propertyGroup>
     </properties>

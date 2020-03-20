@@ -1,6 +1,6 @@
 import { Component, ReactNode, createElement } from "react";
 import { TextStyle, ViewStyle } from "react-native";
-import { HelloWorldSample } from "./components/HelloWorldSample";
+import { StyleLabel as StyleLabelWrapper } from "./components/StyleLabel";
 import { StyleLabelProps } from "../typings/StyleLabelProps";
 import { Style } from "./utils/common";
 
@@ -11,11 +11,11 @@ export interface CustomStyle extends Style {
 
 export class StyleLabel extends Component<StyleLabelProps<CustomStyle>> {
     render(): ReactNode {
-        return (
-            <HelloWorldSample
-                sampleText={this.props.sampleText ? this.props.sampleText : "World"}
-                style={this.props.style}
-            />
-        );
+        const { label, color, style } = this.props;
+
+        return <StyleLabelWrapper 
+            color={color?.value}
+            label={label?.value}
+            style={style} />;
     }
 }

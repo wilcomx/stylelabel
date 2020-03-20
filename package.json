@@ -6,8 +6,8 @@
   "copyright": "2020 Mendix Technology BV",
   "author": "Wilco Leenders",
   "config": {
-    "widgetPath": "./dist/MxTestProject/widgets",
-    "projectPath": "./dist/MxTestProject/"
+    "widgetPath": "../../projects/DEMO_ConfigTeam-main/widgets",
+    "projectPath": "../../projects/DEMO_ConfigTeam-main/"
   },
   "packagePath": "mendix",
   "scripts": {
